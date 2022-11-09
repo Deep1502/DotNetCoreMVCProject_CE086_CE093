@@ -1,0 +1,15 @@
+﻿@model AirlineReservationCore.Models.User
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<h1>Home</h1>
+
+<a asp-action="Details" asp-route-id="@Model.Id">View Profile</a>
+<br />
+<a asp-controller="Flight" asp-action="ViewFlights">View Flights</a>
+<br />
+<a asp-controller="Booking" asp-action="UserBooking" asp-route-id="@Model.Id">View My Bookings</a>
+<br />
+<a asp-action="Logout">Logout</a>

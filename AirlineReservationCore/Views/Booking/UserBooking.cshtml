@@ -1,0 +1,64 @@
+﻿@model IEnumerable<AirlineReservationCore.Models.Booking>
+
+@{
+    ViewData["Title"] = "UserBooking";
+}
+
+<h1>UserBooking</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight.Source)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight.SourceTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight.Destination)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight.DestinationTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookingDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seats)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cost)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Flight.Source)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Flight.SourceTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Flight.Destination)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Flight.DestinationTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seats)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cost)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<hr />
+<a asp-controller="User" asp-action="Home">Back to Home</a>
